@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+    </head>
+
+<body>
+
+<img id="image" width="400" height="400" />
+<input type="file" name="imagen" id="upload">
+
+
+    <script>
+			document.getElementById("upload").onchange = function() {
+			  var reader = new FileReader(); //instanciamos el objeto de la api FileReader
+
+			  reader.onload = function(e) {
+			    //
+
+			    document.getElementById("image").src = e.target.result;
+			  };
+
+			  // read the image file as a data URL.
+			  reader.readAsDataURL(this.files[0]);
+			};
+      </script>
+</body>
+</html>
